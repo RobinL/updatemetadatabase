@@ -1,3 +1,5 @@
 BU/
 .ipynb_checkpoints/
 *.mdb
+*.exe
+*.ldb
