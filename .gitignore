@@ -1,4 +1,6 @@
 BU/
+bu/
+
 .ipynb_checkpoints/
 *.mdb
 *.exe
