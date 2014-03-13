@@ -1,0 +1,42 @@
+#Meta database updator
+
+
+##Aim of UpdateMetaDatabase:
+
+* When new data is received from the contractor, ensure that the meta database is updated to contain any new variables which are detected in the new dataset.
+
+* Ensure that each group of variables has a unique description.
+
+* Finally, ensure that each group of variables has an up to date format associated with it.
+
+###Inputs
+
+1.  List of variables in the new dataset taken from a proc contents, exported to an Excel file
+
+proc contents data= mydataset;
+order = varnum;
+run;
+
+2.  formats.sas, the file which is outputted by SPSS which contains the formats from the dataset
+
+3.  the lastest version of the metadatabase, which is an Access .mdb database
+
+##Processes
+
+First we need to detect any new variables.  There is an algorithm that tries to auto detect base names, number and suffixes etc but it doesn't always work, particularly when what's being added is a single variant.
+
+If it detects the fields wrong, it's better to correct them manually in pandas because adding variables to the databse
+is hard:  you have to get the label right and add in the correct line so the variable is appropriately joined to all
+of the correct types of form
+
+Once we've added all the new variables, we can then 
+
+
+
+
+
+INDICTPLEAB_2 	INDICTPLEAB 		_2 		Where was guilty plea indicated in the court process?
+
+
+
+Update descriptions. Might as well do this last
